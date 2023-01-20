@@ -7,11 +7,12 @@ const {
     elements: { email, password}
 } = event.currentTarget;
 
-if(email.value === "" || password.value === "") {
+if(!email.value || !password.value ) {
     alert ("Заповніть всі поля!")
+} else {
+    console.log({"email": email.value,
+        "password": password.value});
 }
-
-console.log(`Email:${email.value}, Password:${password.value}`);
 
 event.currentTarget.reset();
 
